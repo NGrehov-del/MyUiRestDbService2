@@ -1,0 +1,3 @@
+<!doctype html><html lang="ru" xmlns:th="http://www.thymeleaf.org"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Пользователи</title><link th:href="@{/style.css}" rel="stylesheet"></head><body><main class="container"><nav th:replace="~{fragments/navigation :: navigation}"></nav><h2>Зарегистрированные пользователи</h2><div class="table-wrap"><table class="table"><thead><tr><th>Имя</th><th>Фамилия</th><th>Email</th></tr></thead><tbody>
+<tr th:each="user : ${users}"><td th:text="${user.firstName}"></td><td th:text="${user.lastName}"></td><td th:text="${user.email}"></td></tr>
+</tbody></table></div></main></body></html>

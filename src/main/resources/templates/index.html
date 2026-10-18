@@ -1,0 +1,5 @@
+<!doctype html><html lang="ru" xmlns:th="http://www.thymeleaf.org"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Управление студентами</title><link th:href="@{/style.css}" rel="stylesheet"></head><body><main class="container"><nav th:replace="~{fragments/navigation :: navigation}"></nav><h1>Управление студентами</h1><p>Лабораторная работа 8 — Spring Security, регистрация и вход.</p>
+<p th:if="${!signedIn}">Зарегистрируйтесь и войдите, чтобы работать со студентами и учебными группами.</p>
+<a class="btn btn-primary" th:if="${!signedIn}" th:href="@{/register}">Зарегистрироваться</a>
+<a class="btn btn-primary" th:if="${signedIn}" th:href="@{/list}">Открыть список студентов</a>
+</main></body></html>

@@ -1,0 +1,10 @@
+<!doctype html><html lang="ru" xmlns:th="http://www.thymeleaf.org"><body>
+<nav th:fragment="navigation"><a th:href="@{/index}">Главная</a>
+ <a th:if="${!signedIn}" th:href="@{/login}">Вход</a>
+ <a th:if="${!signedIn}" th:href="@{/register}">Регистрация</a>
+ <a th:if="${signedIn}" th:href="@{/list}">Студенты</a>
+ <a th:if="${signedIn}" th:href="@{/groups}">Учебные группы</a>
+ <a th:if="${signedIn}" th:href="@{/users}">Пользователи</a>
+ <span th:if="${signedIn}" th:text="${loginEmail}"></span>
+ <form th:if="${signedIn}" th:action="@{/logout}" method="post"><button class="btn" type="submit">Выйти</button></form>
+</nav></body></html>
